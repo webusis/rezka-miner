@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <!-- контент: шапка (лого + поиск + меню) + статус + сетка + «ещё» -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/bg">
+
+        <!-- шапка: лого + поиск + гамбургер в одну строку -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="14dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@color/bg">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/logo_bg"
+                android:padding="2dp" />
+
+            <TextView
+                android:id="@+id/logotext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tx"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:paddingLeft="8dp" />
+
+            <!-- переключатель источника: REZKA / YT -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/field_bg"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/tabRezka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REZKA"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/chip_bg" />
+
+                <TextView
+                    android:id="@+id/tabYt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="YT"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/chip_bg" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/query"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:hint="@string/search_hint"
+                android:textColor="@color/tx"
+                android:textColorHint="@color/tx3"
+                android:background="@drawable/field_bg"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/menuBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/field_bg"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:contentDescription="@string/filters">
+
+                <View
+                    android:layout_width="18dp"
+                    android:layout_height="2dp"
+                    android:background="@color/tx"
+                    android:layout_marginBottom="4dp" />
+
+                <View
+                    android:layout_width="18dp"
+                    android:layout_height="2dp"
+                    android:background="@color/tx"
+                    android:layout_marginBottom="4dp" />
+
+                <View
+                    android:layout_width="18dp"
+                    android:layout_height="2dp"
+                    android:background="@color/tx" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tx3"
+            android:textSize="11sp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:minHeight="14dp" />
+
+        <!-- сетка карточек -->
+        <GridView
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:numColumns="4"
+            android:stretchMode="columnWidth"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="12dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="8dp"
+            android:clipToPadding="false"
+            android:listSelector="@color/transparent"
+            android:scrollbarStyle="outsideOverlay" />
+
+        <!-- пагинация: появляется только в конце скролла -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/more"
+                android:visibility="gone"
+                android:textColor="@color/dark_on_ac"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_orange"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:minWidth="0dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- затемнение под панелью -->
+    <View
+        android:id="@+id/ovl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:visibility="gone" />
+
+    <!-- панель фильтров: выезжает справа поверх всего -->
+    <LinearLayout
+        android:id="@+id/panel"
+        android:layout_width="290dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:orientation="vertical"
+        android:background="@color/bg2"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:paddingTop="18dp"
+        android:translationX="290dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarStyle="insideOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filters"
+                    android:textColor="@color/tx3"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_section"
+            android:textColor="@color/tx3"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:paddingBottom="5dp" />
+
+        <TextView
+            android:id="@+id/fLast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_last"
+            android:textSize="12sp"
+            android:background="@drawable/chip_bg"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/fPop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_popular"
+            android:textSize="12sp"
+            android:background="@drawable/chip_bg"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/fWatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_watch"
+            android:textSize="12sp"
+            android:background="@drawable/chip_bg"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genre_section"
+            android:textColor="@color/tx3"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="5dp" />
+
+        <TextView
+            android:id="@+id/gAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genre_all"
+            android:textSize="12sp"
+            android:background="@drawable/chip_on"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/gAnime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genre_anime"
+            android:textSize="12sp"
+            android:background="@drawable/chip_bg"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/gMult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genre_mult"
+            android:textSize="12sp"
+            android:background="@drawable/chip_bg"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/gSer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genre_series"
+            android:textSize="12sp"
+            android:background="@drawable/chip_bg"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/gFilm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genre_films"
+            android:textSize="12sp"
+            android:background="@drawable/chip_bg"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp" />
+
+            <TextView
+                android:id="@+id/mineSec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mine_section"
+                android:textColor="@color/tx3"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingTop="14dp"
+                android:paddingBottom="6dp" />
+
+            <TextView
+                android:id="@+id/localRecent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recent_section"
+                android:textSize="12sp"
+                android:background="@drawable/chip_bg"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/localFav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fav_section"
+                android:textSize="12sp"
+                android:background="@drawable/chip_bg"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp" />
+
+            <TextView
+                android:id="@+id/ytSec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yt_section"
+                android:textColor="@color/tx3"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingTop="14dp"
+                android:paddingBottom="6dp" />
+
+            <TextView
+                android:id="@+id/ytRecs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yt_recs"
+                android:textSize="12sp"
+                android:background="@drawable/chip_bg"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/ytSubs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yt_subs"
+                android:textSize="12sp"
+                android:background="@drawable/chip_bg"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/ytRecent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yt_recent"
+                android:textSize="12sp"
+                android:background="@drawable/chip_bg"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/ytFav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yt_fav"
+                android:textSize="12sp"
+                android:background="@drawable/chip_bg"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

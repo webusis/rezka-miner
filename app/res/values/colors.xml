@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF0B0B0D</color>
+    <color name="bg2">#FF101014</color>
+    <color name="card">#FF15151A</color>
+    <color name="card2">#FF1B1B21</color>
+    <color name="line">#FF2A2A31</color>
+    <color name="ac">#FFFF8C00</color>
+    <color name="ac2">#FFFFB04D</color>
+    <color name="tx">#FFF2F2F2</color>
+    <color name="tx2">#FF9A9AA3</color>
+    <color name="tx3">#FF6B6B74</color>
+    <color name="err">#FFFF6B6B</color>
+    <color name="ok">#FF5FD37B</color>
+    <color name="dark_on_ac">#FF1A1000</color>
+    <color name="transparent">#00000000</color>
+    <!-- Ubuntu Ambiance dark -->
+    <color name="ub_bg">#FF2C2B29</color>
+    <color name="ub_panel">#F0262523</color>
+    <color name="ub_text">#FFDFDBD2</color>
+    <color name="ub_dim">#FF9A9A95</color>
+    <color name="ub_orange">#FFDD4814</color>
+    <color name="ub_orange_hi">#FFF07746</color>
+    <color name="ub_line">#FF5D5C58</color>
+</resources>

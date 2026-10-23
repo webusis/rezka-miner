@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">REZKA//MINER</string>
+    <string name="sub_name">нативный клиент · сервер 0.1</string>
+    <string name="search_hint">фильм, сериал, актёр... (например: мандалорец)</string>
+    <string name="search">ПОИСК</string>
+    <string name="loading">Загрузка...</string>
+    <string name="finding">ищу «%1$s»...</string>
+    <string name="found">нашла: %1$d</string>
+    <string name="no_results">ничего не нашла</string>
+    <string name="err">Ошибка: %1$s</string>
+    <string name="err_timeout">таймаут — сервер ещё считает структуру, нажми ещё раз (второй раз будет быстро)</string>
+    <string name="no_links">Поток не получен — переключись на другую озвучку</string>
+    <string name="season_mx">▶ Сезон целиком в MX</string>
+    <string name="quality_title">Качество (открыть в MX)</string>
+    <string name="cancel">Отмена</string>
+    <string name="open_mx_title">Открыть сезон в MX</string>
+    <string name="structure_loading">Собираю структуру...</string>
+    <string name="stream_loading">Тяну потоки...</string>
+    <string name="open_with">Открыть в…</string>
+    <string name="no_player">Нет плеера для видео</string>
+    <string name="no_url">Нет URL видео</string>
+    <string name="yt_paused">пауза</string>
+    <string name="yt_playing">играем</string>
+    <string name="playlist_loading">Готовлю плейлист...</string>
+    <string name="server_dialog_title">Адрес сервера</string>
+    <string name="server_dialog_hint">http://127.0.0.1:8080</string>
+    <string name="retry_stream">Обновить потоки</string>
+    <string name="back">← к результатам</string>
+    <string name="sec_translators">ПЕРЕВОДЫ</string>
+    <string name="sec_quality">КАЧЕСТВО</string>
+    <string name="sec_seasons">СЕЗОНЫ</string>
+    <string name="sec_episodes">СЕРИИ</string>
+    <string name="watch_movie">▶ Смотреть фильм</string>
+    <string name="watch_season">▶ Смотреть сезон</string>
+    <string name="movie">Фильм</string>
+    <string name="series">Сериал</string>
+    <string name="no_translators">переводы не распознаны</string>
+    <string name="no_seasons">нет сезонов</string>
+    <string name="no_episodes">нет серий</string>
+    <string name="season_fmt">Сезон %1$s%2$s</string>
+    <string name="episode_fmt">x%1$s</string>
+
+    <!-- фильтры главной -->
+    <string name="filter_last">Последние поступления</string>
+    <string name="filter_popular">Популярные</string>
+    <string name="filter_watch">Сейчас смотрят</string>
+    <string name="genre_all">Все</string>
+    <string name="genre_anime">Аниме</string>
+    <string name="genre_mult">Мультфильмы</string>
+    <string name="genre_series">Сериалы</string>
+    <string name="genre_films">Фильмы</string>
+    <string name="new_status">%1$s · %2$s — %3$d</string>
+    <string name="more">ещё ↓</string>
+    <string name="filters">Фильтры</string>
+    <string name="filter_section">Сортировка</string>
+    <string name="genre_section">Показывать</string>
+    <string name="recent_section">Недавние</string>
+    <string name="fav_section">Избранное</string>
+    <string name="mine_section">МОЁ</string>
+    <string name="recent_empty">— пока пусто —</string>
+    <string name="fav_empty">— пока пусто —</string>
+    <string name="local_status">%1$s — %2$d</string>
+    <string name="fav_add">★ В избранное</string>
+    <string name="fav_del">★ В избранном</string>
+    <string name="fav_added">Добавлено в избранное</string>
+    <string name="fav_removed">Убрано из избранного</string>
+
+    <!-- логи сервера -->
+    <string name="server_logging">Логирование (в папке приложения)</string>
+    <string name="clear_logs">Очистить логи</string>
+    <string name="logs_cleared">Логи очищены</string>
+    <string name="server_no_logs">Логирование недоступно — сервер не отвечает</string>
+
+    <!-- youtube -->
+    <string name="yt_section">YOUTUBE</string>
+    <string name="yt_recs">Рекомендации</string>
+    <string name="yt_subs">Подписки</string>
+    <string name="yt_recent">Недавние</string>
+    <string name="yt_fav">Избранное</string>
+    <string name="yt_loading">ютуб: загружаю...</string>
+    <string name="yt_status">ютуб · %1$s — %2$d</string>
+    <string name="yt_empty">ютуб: пока пусто</string>
+    <string name="watch_yt">▶ Смотреть</string>
+    <string name="yt_quality_title">YT · Качество</string>
+</resources>
