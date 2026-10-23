@@ -119,7 +119,6 @@ python3 server.py           # API + веб, :8080
 |---|---|---|
 | веб | `web/` | одна страница, отдаётся сервером; ничего собирать не надо |
 | `di.rezka` | `app/` | Java-клиент: поиск, структура, диалог качества, запуск в MX Player |
-| `RezkaConsole` | `console/` | консоль/терминал на планшете (нативная PTY через jni) |
 | `RezkaServer` | `apk-server/` | python2-сервер для автономного режима, ставится на планшет |
 
 Клиенты получают постеры и видео через `/api/stream_proxy`, чтобы старый
@@ -143,8 +142,11 @@ curl -O https://dl.google.com/android/repository/android-17_r03.zip
 unzip build-tools_r34-linux.zip     # android-14: aapt2, d8, apksigner, zipalign
 unzip android-17_r03.zip            # android-4.2.2: android.jar
 cd ../app && ./build.sh             # -> app/Rezka.apk
-cd ../console && ./build.sh         # -> console/RezkaConsole.apk (нужен gcc-arm-linux-gnueabi)
 ```
+
+Консоль (Rezka Console) — отдельный проект:
+[github.com/webusis/rezka-console](https://github.com/webusis/rezka-console),
+в этом репозитории её нет.
 
 `apk-server/` собирается python-for-android (python2 + openssl), подробности —
 `apk-server/README.md`. Установка сервера и хука автозапуска на прошивке —

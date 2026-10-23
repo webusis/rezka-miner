@@ -32,9 +32,6 @@ android/
 app/gen/
 app/obj/
 app/dex/
-console/gen/
-console/obj/
-console/dex/
 *.class
 app/compiled.flata
 *.idsig
