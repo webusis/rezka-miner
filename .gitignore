@@ -1,0 +1,44 @@
+# зависимости
+node_modules/
+
+# данные и кэш
+data/cache/
+data/cookies.json
+data/cookies_curl.txt
+data/*.json
+data/*.html
+apk-server/data/
+
+# логи и дампы прогонов (в них бывают живые куки аккаунта)
+*.log
+chroot/home-tema/scripts/yt-rezka/logs/
+
+# доска задач — локальная, с путями этой машины
+.board/
+
+# ключи подписи
+*.jks
+*.keystore
+
+# разное
+.DS_Store
+__pycache__/
+*.pyc
+# тулчейн сборки APK (~100 МБ) — не в git
+android/
+
+# артефакты сборки
+app/gen/
+app/obj/
+app/dex/
+console/gen/
+console/obj/
+console/dex/
+*.class
+app/compiled.flata
+app/app.unsigned.apk
+app/app.aligned.apk
+app/Rezka.apk
+web/Rezka.apk
+*.idsig
+*.pyo
