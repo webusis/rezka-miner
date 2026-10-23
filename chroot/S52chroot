@@ -1,0 +1,16 @@
+#!/bin/sh
+# entware-хук (rc.unslung, /opt/etc/init.d/S52chroot). Зеркальный путь: если
+# когда-нибудь включат автозапуск entware (entware.universal.autocontrol),
+# chroot встанёт и через него.
+#
+# Логики тут нет намеренно — всё в /mnt/sdcard/chroot/chroot-boot.sh, чтобы не
+# разъехались две копии. Основной и гарантированно работающий путь —
+# /system/etc/install-recovery.sh (init-хук ROM).
+#
+# В фоне: rc.unslung не должен ждать монтирования sdcard и старта сервиса,
+# а сервис не должен умереть вместе с его сессией. pid-файл в chroot-boot.sh
+# не даст этому пути подраться с install-recovery.sh.
+(
+    while [ ! -f /mnt/sdcard/chroot/chroot-boot.sh ]; do sleep 2; done
+    sh /mnt/sdcard/chroot/chroot-boot.sh
+) >> /data/local/tmp/chroot-boot.log 2>&1 &
