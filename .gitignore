@@ -28,6 +28,7 @@ __pycache__/
 android/
 
 # артефакты сборки
+*.apk
 app/gen/
 app/obj/
 app/dex/
@@ -36,9 +37,5 @@ console/obj/
 console/dex/
 *.class
 app/compiled.flata
-app/app.unsigned.apk
-app/app.aligned.apk
-app/Rezka.apk
-web/Rezka.apk
 *.idsig
 *.pyo
